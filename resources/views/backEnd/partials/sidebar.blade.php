@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <ul id="sidebar_menu">
+    <ul id="sidebar_menu" class="metismenu">
         @if (auth()->user()->role->type != "normal_user")
             <li class="{{request()->is('home') ? 'mm-active' :''}}  " >
                 <a href="{{ route('home') }}" aria-expanded="false">

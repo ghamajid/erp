@@ -9,10 +9,8 @@
 
 <head>
     <script>
-
-            const RTL = "{{ (bool)Illuminate\Support\Facades\Cache::get('language')->rtl}}";
+            const RTL = "1";
             const LANG = "{{ session()->get('locale', Config::get('app.locale')) }}";
-
     </script>
 
     <!-- Required meta tags -->
@@ -41,26 +39,13 @@
 @endphp
 
 <body class="admin"  style="{!! $css !!} ">
-<div class="preloader">
+{{--<div class="preloader">
     <h3 data-text="{{ $setting->preloader }}..">{{ $setting->preloader }}..</h3>
-</div>
+</div>--}}
 
 <div class="main-wrapper" style=" min-height: 600px">
     <!-- Sidebar  -->.
-    @php
-    $arrContextOptions=array(
-      "ssl"=>array(
-            "verify_peer"=>false,
-            "verify_peer_name"=>false,
-        ),
-    );
-        if (file_exists($setting->logo)) {
-            $tt = file_get_contents(url('/').'/'.$setting->logo, false, stream_context_create($arrContextOptions));
-        } else {
-            $tt = file_get_contents(url('/').'/uploads/settings/logo.png', false, stream_context_create($arrContextOptions));
-        }
-    @endphp
-    <input type="text" hidden value="{{ base64_encode($tt) }}" id="logo_img">
+
     @if (!request()->is('pos/pos-order-products'))
         @include('backEnd.partials.sidebar')
     @endif

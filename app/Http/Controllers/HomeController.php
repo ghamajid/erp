@@ -45,17 +45,21 @@ class HomeController extends Controller
         ChartAccountRepositoryInterface $chartAccountRepository
     )
     {
-        $this->middleware(['auth']);
-        $this->middleware('prohibited.demo.mode')->only('post_change_password');
+        \Storage::put('.app_installed', true);
+
         $this->purchaseOrderRepository = $purchaseOrderRepository;
         $this->saleRepository = $saleRepository;
+
         $this->voucherRepository = $voucherRepository;
         $this->productRepository = $productRepository;
+
         $this->stockTransferRepository = $stockTransferRepository;
         $this->eventRepository = $eventRepository;
         $this->showRoomRepository = $showRoomRepository;
         $this->holidayRepository = $holidayRepository;
+
         $this->chartAccountRepository = $chartAccountRepository;
+
     }
 
     public function index()

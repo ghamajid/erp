@@ -38,7 +38,7 @@
 
 <link rel="stylesheet" href="{{asset('backEnd/vendors/css/fastselect.min.css')}}"/>
 <link rel="stylesheet" href="{{asset('backEnd/vendors/js/select2/select2.css')}}"/>
-<link rel="stylesheet" href="{{asset('backEnd/vendors/css/nice-select.css')}}"/>
+
 
 <link rel="stylesheet" href="{{asset('backEnd/vendors/css/fullcalendar.min.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/vendors/calender_js/core/main.css')}}">
@@ -52,7 +52,7 @@
 
 
 <!-- metis menu  -->
-<link rel="stylesheet" href="{{asset('frontend/css/metisMenu.css/')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/metisMenu.css')}}">
 
 @stack('styles')
 
@@ -66,6 +66,7 @@
 @endif
 
 <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}" />
+<link rel="stylesheet" href="{{asset('backEnd/vendors/css/nice-select.css')}}"/>
 
 @if($setting->default_view == 'compact')
     <link rel="stylesheet" href="{{asset('frontend/css/themes/default_compact.css')}}" />

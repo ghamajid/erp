@@ -1,3 +1,4 @@
+
 @php
     $setting = app('general_setting');
 @endphp

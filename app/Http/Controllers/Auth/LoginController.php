@@ -188,6 +188,7 @@ class LoginController extends Controller
 
             return $this->sendLockoutResponse($request);
         }
+
         if ($this->attemptLogin($request)) {
             // User Log
             if (loginPermit()) {
